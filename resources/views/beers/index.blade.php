@@ -27,7 +27,7 @@
                         <a href="{{route('beers.show', $beer)}}" class="btn btn-info">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a href="#" class="btn btn-warning">
+                        <a href="{{route('beers.edit', $beer)}}" class="btn btn-warning">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
                         <a href="#" class="btn btn-danger">

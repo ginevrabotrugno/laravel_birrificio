@@ -58,15 +58,24 @@ class BeerController extends Controller
      */
     public function edit(Beer $beer)
     {
-        //
+        return view('beers.edit', compact('beer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Beer $beer)
+    public function update(BeerRequest $request, Beer $beer)
     {
-        //
+        $data = $request->all();
+
+        if ($data['name'] != $beer->name) {
+
+            $data['slug'] = Helper::generateSlug($data['name'], Beer::class);
+        }
+
+        $beer->update($data);
+
+        return redirect()->route('beers.show', $beer)->with('edited', 'Birra modificata con successo!');
     }
 
     /**
