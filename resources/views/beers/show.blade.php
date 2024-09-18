@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="container my-5">
+    <div class="container my-5 text-center">
 
         <h1> {{ $beer->name }} </h1>
         <p>Prezzo: {{$beer->price}} | Voto: {{$beer->average}} | Slug: {{$beer->slug}} </p>

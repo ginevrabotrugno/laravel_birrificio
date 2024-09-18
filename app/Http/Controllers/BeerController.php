@@ -12,7 +12,7 @@ class BeerController extends Controller
      */
     public function index()
     {
-        $beers = Beer::orderBy('name')->get();
+        $beers = Beer::all();
         return view('beers.index', compact('beers'));
     }
 

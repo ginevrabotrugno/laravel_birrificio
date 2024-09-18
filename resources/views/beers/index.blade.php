@@ -5,7 +5,9 @@
 
 <div class="container my-5">
 
-    <table class="table">
+    <h1 class="my-5">BEERS</h1>
+
+    <table class="table text-center">
         <thead>
           <tr>
             <th scope="col">#id</th>
@@ -21,7 +23,17 @@
                     <th> {{ $beer->id }} </th>
                     <td> {{ $beer->name }} </td>
                     <td> {{ $beer->price }} </td>
-                    <td> <a href="{{route('beers.show', $beer)}}" class="btn btn-warning">INFO</a> </td>
+                    <td>
+                        <a href="{{route('beers.show', $beer)}}" class="btn btn-info">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a href="#" class="btn btn-warning">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
                 </tr>
 
             @endforeach
