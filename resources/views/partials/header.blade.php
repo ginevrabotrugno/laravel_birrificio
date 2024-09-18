@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('beers.index') }}">Beers</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('beers.create') }}">New Beer</a>
+                </li>
             </ul>
           </div>
         </div>
