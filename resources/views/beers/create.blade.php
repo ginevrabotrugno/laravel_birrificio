@@ -10,3 +10,7 @@
 </div>
 
 @endsection
+
+@section('title')
+    ADD BEER
+@endsection

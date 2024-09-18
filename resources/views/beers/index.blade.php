@@ -43,3 +43,7 @@
 
 
 @endsection
+
+@section('title')
+    BEERS
+@endsection

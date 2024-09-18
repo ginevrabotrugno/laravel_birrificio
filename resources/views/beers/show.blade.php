@@ -11,3 +11,7 @@
 
     </div>
 @endsection
+
+@section('title')
+    {{ $beer->name }}
+@endsection
