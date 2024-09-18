@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Beer extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'price',
+        'average',
+        'image'
+    ];
 }

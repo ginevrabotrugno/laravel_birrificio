@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Functions\Helper;
+use App\Http\Requests\BeerRequest;
 use App\Models\Beer;
 use Illuminate\Http\Request;
 
@@ -27,9 +29,19 @@ class BeerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BeerRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Helper::generateSlug($data['name'], Beer::class);
+
+        // $new_beer = new Beer();
+        // $new_beer->fill($data);
+        // $new_beer->save();
+
+        $new_beer = Beer::create($data);
+
+        return redirect()->route('beers.show', $new_beer);
+
     }
 
     /**
