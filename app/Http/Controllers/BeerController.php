@@ -15,7 +15,7 @@ class BeerController extends Controller
     public function index()
     {
         if (isset($_GET['tosearch'])) {
-            $beers = Beer::where('name', 'LIKE', '%' . $_GET['tosearch'] . '%')->paginate(10);
+            $beers = Beer::where('name', 'LIKE', '%' . $_GET['tosearch'] . '%')->orderBy('name')->paginate(10);
         } else {
             $beers = Beer::orderBy('name')->paginate(10);
         }

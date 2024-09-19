@@ -4,7 +4,7 @@
 @section('content')
     <div class="container my-5">
 
-        <h1 class="my-5"><a href="{{ route('beers.index') }}">BEERS</a></h1>
+        <h1 class="my-5"><a href="{{ route('beers.index') }}" class="link-dark link-underline-light">BEERS</a></h1>
 
         <form action="{{ route('beers.index') }}" method="GET" class="d-flex">
             <input class="form-control me-2" type="text" placeholder="Nome" name="tosearch">
@@ -47,7 +47,11 @@
                 </tbody>
             </table>
         @else
-            <h2>La ricerca non ha prodotto risultati</h2>
+
+            <div class="alert alert-danger m-5" role="alert">
+               La Ricerca non ha prodotto risultati!
+            </div>
+
         @endif
         {{ $beers->links() }}
     </div>
