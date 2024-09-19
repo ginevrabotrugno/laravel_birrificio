@@ -4,7 +4,7 @@
 @section('content')
     <div class="container my-5">
 
-        <h1 class="my-5">BEERS</h1>
+        <h1 class="my-5"><a href="{{ route('beers.index') }}">BEERS</a></h1>
 
         <form action="{{ route('beers.index') }}" method="GET" class="d-flex">
             <input class="form-control me-2" type="text" placeholder="Nome" name="tosearch">
