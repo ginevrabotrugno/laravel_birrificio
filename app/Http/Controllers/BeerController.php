@@ -14,7 +14,12 @@ class BeerController extends Controller
      */
     public function index()
     {
-        $beers = Beer::orderBy('name')->paginate(10);
+        if (isset($_GET['tosearch'])) {
+            $beers = Beer::where('name', 'LIKE', '%' . $_GET['tosearch'] . '%')->paginate(10);
+        } else {
+            $beers = Beer::orderBy('name')->paginate(10);
+        }
+
         return view('beers.index', compact('beers'));
     }
 
@@ -41,7 +46,6 @@ class BeerController extends Controller
         $new_beer = Beer::create($data);
 
         return redirect()->route('beers.show', $new_beer);
-
     }
 
     /**
