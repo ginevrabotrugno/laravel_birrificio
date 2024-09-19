@@ -6,7 +6,10 @@
 <div class="container my-5">
 
     <h1 class="my-5">BEERS</h1>
+    @if (session('cancelled'))
+        <p class="text-success">L'elemento è stato eliminato correttamente</p>
 
+    @endif
     <table class="table text-center">
         <thead>
           <tr>
@@ -30,9 +33,8 @@
                         <a href="{{route('beers.edit', $beer)}}" class="btn btn-warning">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
-                        <a href="#" class="btn btn-danger">
-                            <i class="fa-solid fa-trash"></i>
-                        </a>
+
+                       @include('partials.form_delete')
                     </td>
                 </tr>
 
