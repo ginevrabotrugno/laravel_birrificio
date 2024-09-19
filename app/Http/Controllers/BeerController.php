@@ -14,7 +14,7 @@ class BeerController extends Controller
      */
     public function index()
     {
-        $beers = Beer::all();
+        $beers = Beer::orderBy('name')->paginate(10);
         return view('beers.index', compact('beers'));
     }
 
